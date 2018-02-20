@@ -37,7 +37,7 @@ import {
 } from './Mostraris.jsx';
 import * as Qs from './Queries.jsx';
 import FootrAdaptat from './Footer.jsx';
-import HeaderAdaptat from './Header.jsx';
+import HeaderBar from './headerbar.jsx';
 import MainContentProducte from './DetallProducte.jsx';
 import * as Stylo from './StyledComponents.jsx';
 
@@ -65,12 +65,6 @@ const NavbarAdaptatAmbSubcategories = graphql(Qs.SubcategoriesQuery, {
         variables
     }
 })(NavbarAdaptat);
-
-const HeaderAdaptatAmbSubcategories = graphql(Qs.SubcategoriesQuery, {
-    options: {
-        variables
-    }
-})(HeaderAdaptat);
 
 export default class App extends Component {
     constructor(props) {
@@ -243,6 +237,7 @@ export default class App extends Component {
                     variables
                 }
             })(FootrAdaptat)
+
         ;
 
         class BuscadorColumnaSUBCAT extends Component {
@@ -364,10 +359,11 @@ export default class App extends Component {
             <Router>
                 <Stylo.LO>
                     <Route path="/" render={() => (
-                        <HeaderAdaptatAmbSubcategories
-                            subcategoryIdAlState={this.subcategoryIdAlState}
-                        />
+                            <HeaderBar
+                                
+                            />
                     )}/>
+
                     <Route path="/" render={() => (
                             <NavbarAdaptatAmbSubcategories
                                 subcategoryIdAlState={this.subcategoryIdAlState}
@@ -384,21 +380,25 @@ export default class App extends Component {
                                 filtreColor={this.state.filtreColor}
                             />
                     )}/>
+
                     <Route exact path="/" render={() => ([
-                        <Stylo.slider
-                            key="slider"
+                        <Stylo.MainVideo
+                            key="video"
                         >
-                            {conf.slider}
-                        </Stylo.slider>
+                            {conf.video_latinmoda}
+                        </Stylo.MainVideo>
                         ,
                         <Stylo.MainContent
                             key="content"
                         >
+    		              <h1>{conf.subtituloPagina}</h1>
+    		              <h2>{conf.titulo_contenido}</h2>
+    		              {conf.texto_contenido}
     		              {conf.bloque_info}
 
     		            </Stylo.MainContent>
                     ])}/>
-                    
+
                     <Route exact path="/categoria/:subcategoryId" render={({ match, history, location }) => {
                         let
                             variables = Object.assign({}, this.state.variables, {

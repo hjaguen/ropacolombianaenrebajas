@@ -18,11 +18,11 @@ export let
     ,
 
 // Imagen de fondo y sus opciones
-    // fonsPrincipal = `background_blue_v0011.jpg`,
-    // backgroundSize =  `cover`,
-    // backgroundRepeat = `no-repeat`,
-    // backgroundAttachment = `fixed`
-    // ,
+    fonsPrincipal = `background_blue_v0011.jpg`,
+    backgroundSize =  `cover`,
+    backgroundRepeat = `no-repeat`,
+    backgroundAttachment = `fixed`
+    ,
 
 // Tamaño de columna y estilo para las fotos de producto
     amplaria_fitxetes_subcategoria = `220px`

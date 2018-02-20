@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 import * as conf from './config.jsx';
 
-let bloCol = (conf.filtres_posicio) === `columna` ? `"col mos mos"` : `". bq bq" ". mos mos"`;
+let bloCol = (conf.filtres_posicio) === `columna` ? `"col mos mos"` : `"bq bq bq" "mos mos mos"`;
 
 export const
     LO = styled.div`
@@ -10,19 +10,18 @@ export const
         display: grid;
         grid-template-columns: 0.8fr 1fr 1.2fr;
         grid-template-areas:
-            "h h h"
-            "nb c c"
+            "hb hb hb"
+            "nb c ."
             ${bloCol}
             "min fot tex"
             "ft ft ft"
         ;
-        // background-image: url(/${conf.fonsPrincipal});
-        // background-size: ${conf.backgroundSize};
-        // background-repeat: ${conf.backgroundRepeat};
-        // background-attachment: ${conf.backgroundAttachment};
+        background-image: url(/${conf.fonsPrincipal});
+        background-size: ${conf.backgroundSize};
+        background-repeat: ${conf.backgroundRepeat};
+        background-attachment: ${conf.backgroundAttachment};
     `,
 
-    
     ProductsLayout = styled.div`
       display: grid;
       grid-template-columns: 25% auto;
@@ -31,15 +30,22 @@ export const
         "filtro content"
     `,
 
+    HeaderBar = styled.div`
+      grid-area : hb;
+      position:sticky;
+      z-index: 100;
+      background-color: rgba(255, 255, 255, 0.25);
+    `
+
     MainNavBar = styled.nav`
         grid-area: nb;
-        max-width: 300px;
-        position: sticky;
+        //position: sticky;
+        top: 0;
         height: min-height;
-        //background-color: rgba(255, 255, 255, 0.25);
+        background-color: rgba(255, 255, 255, 0.25);
         transition: all 1s ease;
-        font-family: 'Pacifico', cursive;
-        top:8em;
+        z-index: 100;
+        font-family: 'Comfortaa', sans-serif;
     `,
 
     PosicionFiltro = styled.div`
@@ -53,11 +59,12 @@ export const
         width: 90%;
         max-width: 300px;
         background: rgba(255, 255, 255, 0.25);
-        position: fixed;
-        margin-top: -8%;
-        // padding-top:2em;
-        float:right;
-        z-index:400;
+        margin: 2em 2em;
+        padding: 2em;
+        borderRadius: 1em;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 160px;
 
         * {
             transition: all 1s ease;
@@ -100,7 +107,6 @@ export const
 
     PosicionProductos = styled.div`
       grid-area: mos;
-      margin-top:-25%;
     `,
 
     NavTitle = styled.h1`
@@ -108,8 +114,8 @@ export const
         font-size: 2.5em;
         color: black;
         text-shadow: 8px 5px 10px black;
-        font-family: 'Pacifico', cursive;
-        font-weight: 400;
+        font-family: 'Comfortaa', sans-serif;
+        font-weight: 700;
 
         @media (min-width:351px) and (max-width:500px) {
           font-size: 1.4em;
@@ -120,8 +126,9 @@ export const
         }
     `,
 
-    slider = styled.div`
-      grid-area: s;
+    MainVideo = styled.div`
+      grid-area: v;
+      padding: 20px;
     `,
 
     MainContent = styled.div.attrs({
@@ -134,42 +141,42 @@ export const
         margin-bottom: 20px;
 
         > h1 {
-          font-family: 'Pacifico', cursive;
+          font-family: 'Comfortaa', sans-serif;
           font-size: 2.5em;
-          font-weight: 400;
+          font-weight: 700;
         }
 
         > h2 {
-          font-family: 'Pacifico', cursive;
+          font-family: 'Comfortaa', sans-serif;
           font-size: 2em;
-          font-weight: 400;
+          font-weight: 500;
         }
 
         > h3 {
-          font-family: 'Pacifico', cursive;;
+          font-family: 'Comfortaa', sans-serif;
           font-size: 1.7em;
-          font-weight: 400;
+          font-weight: 300;
         }
 
         p {
-          font-family: 'Lato', sans-serif;
+          font-family: 'Comfortaa', sans-serif;
           font-size: 1.2em;
-          font-weight: 400;
+          font-weight: 100;
         }
     `,
 
     aLink = styled('a')`
-      //padding: 15px;
+      padding: 15px;
       // padding-top: 7px !important;
       // padding-bottom: 7px !important;
       color: black;
       font-size: 1.25em;
 	    text-shadow: 0 1px 0 rgba(255,255,255,.25);
-      font-family: 'Lato', sans-serif;
-      font-weight: 400;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 500;
       //transform: scaleX(.9);
         &:hover, &:focus {
-          color: yellow;
+          color: rgb(255, 64, 129);
 
         }
     `,
@@ -195,13 +202,6 @@ export const
     footer = styled.footer.attrs({
       className: 'mdl-mega-footer'
     })`
-      // background-color: black;
+      background-color: transparent;
     `
-    ,
-
-    header = styled.header`
-      grid-area: h;
-      position: relative;
-      z-index: 999;
-      `
 ;
