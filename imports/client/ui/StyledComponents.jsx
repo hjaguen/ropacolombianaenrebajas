@@ -2,24 +2,25 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 import * as conf from './config.jsx';
 
-let bloCol = (conf.filtres_posicio) === `columna` ? `"col mos mos"` : `". bq bq" ". mos mos"`;
+let bloCol = (conf.filtres_posicio) === `columna` ? `"mos mos col "` : `"bq bq nb" "mos mos ."`;
 
 export const
     LO = styled.div`
         padding: 0px;
         display: grid;
-        grid-template-columns: 0.8fr 1fr 1.2fr;
+        grid-template-columns: 1.2fr 1.2fr 0.6fr;
         grid-template-areas:
             "h h h"
-            "nb c c"
+            "p p nb"
+            "c c nb"
             ${bloCol}
             "min fot tex"
             "ft ft ft"
         ;
-        // background-image: url(/${conf.fonsPrincipal});
-        // background-size: ${conf.backgroundSize};
-        // background-repeat: ${conf.backgroundRepeat};
-        // background-attachment: ${conf.backgroundAttachment};
+        background-image: url(/${conf.fonsPrincipal});
+        background-size: ${conf.backgroundSize};
+        background-repeat: ${conf.backgroundRepeat};
+        background-attachment: ${conf.backgroundAttachment};
     `,
 
     
@@ -43,21 +44,20 @@ export const
     `,
 
     PosicionFiltro = styled.div`
+        margin-top: -13em;
         grid-area: ${(conf.filtres_posicio) === "columna" ? "col" : "bq"};
     `,
 
 
     Filtro = styled.div.attrs({
-      className: 'filtro'
+      className: 'filtro col-sm-8'
     })`
-        width: 90%;
-        max-width: 300px;
-        background: rgba(255, 255, 255, 0.25);
+        borderRadius: 1em;
         position: fixed;
-        margin-top: -8%;
-        // padding-top:2em;
-        float:right;
-        z-index:400;
+        //position: -webkit-sticky;
+        display:inline-block;
+        float:left;
+        z-index:1000;
 
         * {
             transition: all 1s ease;
@@ -100,7 +100,7 @@ export const
 
     PosicionProductos = styled.div`
       grid-area: mos;
-      margin-top:-25%;
+      margin-top:-10%;
     `,
 
     NavTitle = styled.h1`
@@ -120,8 +120,8 @@ export const
         }
     `,
 
-    slider = styled.div`
-      grid-area: s;
+    portada = styled.div`
+      grid-area: p;
     `,
 
     MainContent = styled.div.attrs({
@@ -169,7 +169,7 @@ export const
       font-weight: 400;
       //transform: scaleX(.9);
         &:hover, &:focus {
-          color: yellow;
+          color: white;
 
         }
     `,
@@ -201,7 +201,9 @@ export const
 
     header = styled.header`
       grid-area: h;
-      position: relative;
+      position: fixed;
       z-index: 999;
+      width: 100%;
+      padding-bottom:50px;
       `
 ;

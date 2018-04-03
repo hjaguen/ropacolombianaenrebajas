@@ -18,7 +18,7 @@ export let
     ,
 
 // Imagen de fondo y sus opciones
-    fonsPrincipal = `background_blue_v0011.jpg`,
+    fonsPrincipal = `fondo.jpg`,
     backgroundSize =  `cover`,
     backgroundRepeat = `no-repeat`,
     backgroundAttachment = `fixed`
@@ -40,7 +40,7 @@ export let
     ,
 
 // Estilo para modulo de filtro
-     filtres_posicio = `columna` // `columna` | `bloque`
+     filtres_posicio = `bloque` // `columna` | `bloque`
      ,
     // ,
     //             layoutTemplateArea =
@@ -194,4 +194,9 @@ export let
     //       </div>
     //     </div>
     //   </div>
+
+    // portada =
+    // <div style={{border: `1em solid white`, borderRadius: `10px`, boxShadow: `8px 8px 20px #000`}}> 
+    //     <img className="img-responsive" src="./latinmoda-gif.gif"/>
+    // </div> 
 ;

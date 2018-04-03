@@ -30,6 +30,19 @@ Meteor.startup(() => {
         }
     }*/
 
+    window.onscroll = () => {
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50 ) {
+            //document.getElementById("footer").style.position="relative";
+            document.getElementById("header").style.backgroundColor = "fuchsia";
+            [...document.querySelectorAll(".nombre-marca h1, .emailytel")].map((v,i,a)=>v.style.color = "white");
+            document.getElementById('filter').style.backgroundColor = "fuchsia";
+        } else {
+            document.getElementById("header").style.backgroundColor = "transparent";
+            [...document.querySelectorAll(".nombre-marca h1, .emailytel")].map((v,i,a)=>v.style.color = "black");
+            document.getElementById('filter').style.backgroundColor = "transparent";
+         }
+    }
+
     render(
         <ApolloProvider client={client}>
             <App />

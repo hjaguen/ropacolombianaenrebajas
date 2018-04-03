@@ -165,12 +165,7 @@ export class MarquesSUBCAT extends Component {
             <div
                 className={(window.innerWidth<500)?`amaga`:`mostra`}
                 style={{
-                    //margin: `1em auto`
-                    //marginTop:`2em`,
-                    marginLeft:`1em`,
-                    marginRight:`1em`,
-                    width:`20%`,
-                    display:`inline-block`
+                    margin: `1em auto`
                 }}
             >
                 <Select
@@ -336,11 +331,7 @@ export class TallesSUBCAT extends Component {
             <div
                 className={(window.innerWidth<500)?`amaga`:`mostra`}
                 style={{
-                    //margin: `3em auto`
-                    //marginTop:`2em`,
-                    marginRight:`0.5em`,
-                    width:`20%`,
-                    display:`inline-block`
+                    margin: `3em auto`
                 }}
             >
                 <Select
@@ -410,9 +401,9 @@ export class ColorsSUBCAT extends Component {
                              fontFamily: `v`,
                              cursor: `pointer`,
                              float: `right`,
-                             margin: `.8em`,
-                             // marginRight: `.8em`,
-                             // marginBottom: `.4em`
+                             marginTop: `-.8em`,
+                             marginRight: `-.7em`,
+                             marginBottom: `.4em`
                          }}
                         key="x"
                         data-nomcolor=""
@@ -508,11 +499,10 @@ export class ColorsSUBCAT extends Component {
             <div
                 className={`filtreC ${(window.innerWidth<500)?`amaga`:`mostra`}`}
                 style={{
-                    //marginTop: `2em`,
+                    marginTop: `3em`,
+                    display: `flex`,
                     justifyContent: `center`,
-                    flexWrap: `wrap`,
-                    width:`40%`,
-                    display:`inline-block`
+                    flexWrap: `wrap`
                 }}
             >
                 {

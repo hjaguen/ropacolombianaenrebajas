@@ -48,6 +48,8 @@ import {
     BuscadorColumnaSUBCAT
 } from './Filtros.jsx';
 
+import Cookies from './cookies'
+
 
 let variables = {
     apiUrl: "http://api.colombiaespassion.net",
@@ -264,7 +266,7 @@ export default class App extends Component {
 
             render() {
                 return (
-                    <Stylo.Filtro>
+                    <Stylo.Filtro id="filter">
                     {
                         (this.props.filtreTalla || this.props.filtreMarca || this.props.filtreColor)
                             ?   <span
@@ -385,11 +387,14 @@ export default class App extends Component {
                             />
                     )}/>
                     <Route exact path="/" render={() => ([
-                        <Stylo.slider
-                            key="slider"
-                        >
-                            {conf.slider}
-                        </Stylo.slider>
+                        // <Stylo.portada
+                        //     key="portada"
+                        // >
+                        //     {conf.portada}
+                        // </Stylo.portada>
+                        <div style={{gridArea: `p`, border: `1em solid white`, borderRadius: `10px`, boxShadow: `8px 8px 20px #000`, marginTop:`15%`}}> 
+                            <img className="img-responsive" src="./latinmoda-gif3.gif" />
+                        </div>
                         ,
                         <Stylo.MainContent
                             key="content"
@@ -786,6 +791,12 @@ export default class App extends Component {
                             />
                         );
                     }}/>
+
+                    <Route path="/" render={() => (
+                        <div>
+                            <Cookies />
+                        </div>
+                    )}/>
 
                     <Route path="/" render={() => (
                         <div
