@@ -203,6 +203,42 @@ export default class HeaderAdaptat extends Component {
                     </div>
                 </div>
             </div>
+            ,
+            
+                <div className="modal fade" id="email" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div className="modal-dialog modal-lg" role="document">
+                    <div className="modal-content">
+                      <div className="modal-header">
+                        <button type="button" className="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 className="modal-title" id="myModalLabel">Contáctanos</h4>
+                      </div>
+                      <div className="modal-body">
+                        <form >
+                          <div className="form-group">
+                            <label htmlFor="emailCliente">Dirección de Email:</label>
+                            <input type="email" className="form-control" id="emailCliente" placeholder="Introduzca su Email" ref={input => this.from = input} />
+                          </div>
+                          <div className="form-group">
+                            <label htmlFor="mensajeCliente">Mensaje:</label>
+                            <textarea className="form-control" id="mensajeCliente" placeholder="Escriba su Mensaje" ref={ta => this.text = ta }/>
+                          </div>
+                          <button
+                            className="btn btn-default"
+                            onClick={(ev)=>{
+                                ev.preventDefault();
+                                ev.stopPropagation();
+                                Meteor.call('enviaCorreu', this.from.value, this.text.value );
+                                alert("Mensaje enviado. ¡Gracias por contactar con nosotros!");
+                            }}
+                          >Enviar</button>
+                        </form>
+                      </div>
+                      <div className="modal-footer">
+                        <button type="button" className="btn btn-default" data-dismiss="modal">Cerrar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             ] 
         );
     }

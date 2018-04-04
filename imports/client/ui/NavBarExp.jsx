@@ -79,7 +79,7 @@ export default class NavbarAdaptat extends Component {
                 </div>
 
                 {/*Modal de el envio de correo electrónico*/}
-                <div className="modal fade" id="email" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel">
+                {/*<div className="modal fade" id="email" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel">
                   <div className="modal-dialog modal-lg" role="document">
                     <div className="modal-content">
                       <div className="modal-header">
@@ -112,7 +112,7 @@ export default class NavbarAdaptat extends Component {
                       </div>
                     </div>
                   </div>
-                </div>
+                </div>*/}
             </Stylo.MainNavBar>
         );
     }
